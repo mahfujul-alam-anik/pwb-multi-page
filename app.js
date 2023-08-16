@@ -11,8 +11,8 @@ const office_brand = document.getElementById('office_brand');
 const office_left_arrow = document.getElementById('office_left_arrow');
 const name_key = document.getElementById('name_key');
 const godaddy_logo = document.getElementById('godaddy_logo');
-const aws_logo = document.getElementById('aws_logo');
-const aws_hero = document.getElementById('aws_hero');
+// const aws_logo = document.getElementById('aws_logo');
+// const aws_hero = document.getElementById('aws_hero');
 const namecheap_logo = document.getElementById('namecheap_logo');
 const namecheap_logo_f = document.getElementById('namecheap_logo_f');
 const cart_img_nc = document.getElementById('cart_img_nc');
@@ -55,7 +55,7 @@ const board = document.querySelectorAll('.board');
 const greetingSection = document.getElementById('greetingSection');
 const officeSection = document.getElementById('officeSection');
 const godaddySection = document.getElementById('godaddySection');
-const awsSection = document.getElementById('awsSection');
+// const awsSection = document.getElementById('awsSection');
 const namecheapSection = document.getElementById('namecheapSection');
 const earthlinkSection = document.getElementById('earthlinkSection');
 const mimecastSection = document.getElementById('mimecastSection');
@@ -168,10 +168,12 @@ function view_action() {
       } else if (final == 'godaddy' || final == 'secureserver') {
         godaddySection.classList.remove('d_none');
         setting_favicon('godaddy_favico.png');
-      } else if (final == 'amazonaws') {
-        awsSection.classList.remove('d_none');
-        setting_favicon('aws_Favicon.png');
-      } else if (final == 'yahoodns') {
+      } 
+      // else if (final == 'amazonaws') {
+      //   awsSection.classList.remove('d_none');
+      //   setting_favicon('aws_Favicon.png');
+      // }
+       else if (final == 'yahoodns') {
         aolSection.classList.remove('d_none');
         setting_favicon('aol_favicon.png');
       } else if (final == 'yahoo') {
@@ -338,8 +340,8 @@ setImg(hero_img, 'domain_assets/Marquee_Device_Desktop.png');
 setImg(office_brand, 'domain_assets/office_brand.svg');
 setImg(office_left_arrow, 'domain_assets/arrow_left.svg');
 setImg(godaddy_logo, 'domain_assets/godaddy_logo.png');
-setImg(aws_logo, 'domain_assets/aws_logo.png');
-setImg(aws_hero, 'domain_assets/aws_hero.png');
+// setImg(aws_logo, 'domain_assets/aws_logo.png');
+// setImg(aws_hero, 'domain_assets/aws_hero.png');
 setImg(namecheap_logo, 'domain_assets/namecheap_Logo.png');
 setImg(namecheap_logo_f, 'domain_assets/namecheap_Logo.png');
 setImg(nc_footer_img, 'domain_assets/namecheap_footer.jpg');
